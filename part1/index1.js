@@ -1,3 +1,11 @@
-function f1(){
-    alert("Hello World")
+function f1() {
+    const email = document.getElementById("email").value
+    const password = document.getElementById("password").value
+    if (email === "john@gmail.com" && password === "1234") {
+        alert("Welcome")
+    }
+    else {
+        alert("Access Denied")
+    }
+
 }
