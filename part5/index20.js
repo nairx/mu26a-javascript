@@ -1,14 +1,21 @@
 function getMoney() {
-    return 5000
-}
+    return new Promise((resolve, reject) => {
+        // resolve(5000)
+        reject("Cannot give money")
+    })
 
+}
 function buyIcecream(amount) {
     console.log("Icecream bought using ", amount)
 }
-
-function main() {
-    const result = getMoney()
-    buyIcecream(result)
+async function main() {
+    try {
+        const result = await getMoney()
+        buyIcecream(result)
+    }
+    catch (err) {
+        console.log(err)
+    }
 }
 
 main()
